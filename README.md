@@ -1,5 +1,6 @@
 # CellAutomatica
-Simple cell life game program made by three stubit students.
+Simple cell life game program made by three stubit students.　　
+
 简介： 生命游戏是一种无玩家参与，全程由计算机自助控制发展的格局游戏。
 /=========================================================================/　　
 
