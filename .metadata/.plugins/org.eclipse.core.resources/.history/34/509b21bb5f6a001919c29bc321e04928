@@ -1,0 +1,40 @@
+public class Main {
+public static void main(String[] args) {
+	System.out.println("ArmyAutomatica Loaded, Ready to Launch!");
+	//国际惯例欢迎标语
+	Work map1 = new Work();//抽象带师展开棋盘
+	map1.gen();            //棋盘粗线了！
+	map1.print();          //棋盘被打印出来了！
+	
+}
+}
+class Work //开创工作序列
+{
+	static int X=10;
+	static int Y=10;
+	//这个棋盘大小的接口以后再改，目前先这样放着吧
+	public String[][]maps;
+	public void gen() //初始化棋盘生成方法
+	{
+      String [][]a=new String[X+1][Y+1];                    //开X+1,Y+1个位置把一行一列空出来方便调整
+      for(int i=1;i<=X;i++) 
+      {
+    	  for(int j=1;j<=Y;j++)
+    	  {
+    		  a[i][j]="🈳 ";
+    	  }
+      }
+     maps = a; //把这个初始化的棋盘拿出来
+	}
+	public void print() //初始化打印方法
+	{
+		for(int i=1;i<=X;i++) 
+	    {
+	  	  for(int j=1;j<=Y;j++)
+	  	  {
+	  		System.out.print(maps[i][j]);
+	  	  }
+	  	    System.out.println();
+	}
+	}
+}

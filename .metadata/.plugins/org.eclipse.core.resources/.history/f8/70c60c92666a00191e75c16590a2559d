@@ -1,0 +1,63 @@
+import java.util.*;
+public class Main {
+    static String[][]world; //缓存区的游戏地图
+public static void main(String[] args) {
+	System.out.println("ArmyAutomatica Loaded, Ready to Launch!");
+	//国际惯例欢迎标语
+	Work map1 = new Work();//抽象带师展开棋盘
+	world= map1.gen();            //棋盘粗线了！
+	map1.print(world);          //棋盘被打印出来了！
+	System.out.println("Map generated, release the Characters!");
+	new Scanner(System.in).nextLine(); 
+	Work.spawn();
+	map1.print(world);          //一局游戏要开始了！
+	while (true){
+		
+	}
+}
+}
+class Work //开创工作序列
+{
+	static int X=10;
+	static int Y=10;
+	//这个棋盘大小的接口以后再改，目前先这样放着吧
+	public String[][] gen() //初始化棋盘生成方法
+	{
+      String [][]a=new String[X+1][Y+1];                    //开X+1,Y+1个位置把一行一列空出来方便调整
+      for(int i=1;i<=X;i++) 
+      {
+    	  for(int j=1;j<=Y;j++)
+    	  {
+    		  a[i][j]="\ud83c\ude33 ";
+    	  }
+      }
+     return a; //把这个初始化的棋盘拿出来
+	}
+	public void print(String[][] map) //初始化打印方法
+	{
+		for(int i=1;i<=X;i++) 
+	    {
+	  	  for(int j=1;j<=Y;j++)
+	  	  {
+	  		System.out.print(map[i][j]);
+	  	  }
+	  	    System.out.println();
+	}
+	}
+	public static void spawn()
+	{
+		Horse.spawn();
+	}
+	public void run()//一轮游戏进行中
+	{
+		
+	}
+}
+//邪恶势力登场
+class Horse
+{
+	public static void spawn()
+	{
+		Main.world[(int)(Math.random()*10+1)][(int)(Math.random()*10+1)] ="🐴 ";
+	}
+}
